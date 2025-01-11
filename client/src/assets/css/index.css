@@ -1,0 +1,118 @@
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+:root {
+    --bg: #c3e0e0;
+    --white: #ffffff;
+    --text: #414748;
+    --btn: #007081;
+}
+html {
+    font-size: 90%;
+}
+body {
+    background: var(--bg);
+    color: var(--text);
+}
+.page {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    width: 100vw;
+    height: 100vh;
+}
+.login-form {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    margin: auto auto;
+    padding: 1.5rem;
+    max-width: 350px;
+    width: 80%;
+    background: var(--white);
+    border-radius: 5px;
+    border: 0.1px solid lightgray;
+}
+.login-form #msg {
+    margin: 0.3rem auto;
+    font-weight: 700;
+    padding: 0.5rem;
+    width: 100%;
+}
+.login-form .error {
+    color: #e01200;
+    border: 0.1px solid #e01200;
+    background: rgba(224, 18, 0, 0.085);
+    border-radius: 5px;
+}
+.login-form .success {
+    color: #068f00;
+    border: 0.1px solid #068f00;
+    background: rgba(27, 224, 0, 0.085);
+    border-radius: 5px;
+}
+.login-form img {
+    width: 200px;
+    height: 45px;
+    object-fit: fill;
+    margin: 0.5rem auto;
+}
+.login-form #avatar {
+    width: 130px;
+    height: 130px;
+    object-fit: cover;
+    margin: 0.2rem auto;
+    border-radius: 50%;
+    border: 0.1px solid var(--btn);
+}
+.login-form label {
+    padding: 0.7rem 1rem;
+    border: 0.1px solid var(--btn);
+    border-radius: 5px;
+    color: var(--btn);
+    font-weight: 900;
+    width: 100%;
+}
+.login-form input,
+button {
+    width: 100%;
+    margin: 0.6rem auto;
+    padding: 0.7rem 1rem;
+    border-radius: 5px;
+    outline: none;
+    border: 1px solid var(--btn);
+    background: transparent;
+    font-weight: 900;
+    color: var(--text);
+}
+.login-form input:focus {
+    border: 1px solid #00b934;
+}
+.login-form button {
+    outline: none;
+    border: none;
+    background: var(--btn);
+    color: var(--white);
+    font-weight: 900;
+    transition: 0.3s ease-in;
+}
+.login-form button:hover {
+    background: #003f40;
+}
+.login-form span {
+    margin: 0.5rem auto;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    gap: 3px;
+    color: var(--text);
+}
+.login-form span a {
+    text-decoration: none;
+    color: var(--btn);
+    font-weight: 900;
+}
