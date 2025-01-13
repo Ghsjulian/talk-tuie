@@ -5,22 +5,30 @@ import NotFound from "./pages/404";
 import Home from "./pages/Home";
 import Login from "./pages/Login";
 import Signup from "./pages/Signup";
-import UserAuth from "./auth/UserAuth"
+import UserAuth from "./auth/UserAuth";
+import LoginAuth from "./auth/LoginAuth";
 
 const MyRoutes = [
     {
         path: "/",
-        element: <UserAuth><Home/></UserAuth>,
+        element: (
+            <UserAuth>
+                <Home />
+            </UserAuth>
+        )
     },
 
     {
         path: "/login",
-        element:  <Login /> 
+        element: (
+            <LoginAuth>
+                <Login />
+            </LoginAuth>
+        )
     },
     {
         path: "/signup",
-        element:
-        <Signup /> 
+        element: <LoginAuth><Signup /></LoginAuth>
     },
     {
         path: "*",

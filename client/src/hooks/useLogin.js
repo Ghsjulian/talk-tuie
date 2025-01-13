@@ -12,11 +12,11 @@ const useLogin = () => {
             const response = await axios.post(`${api}/user-login`, data, {
                 withCredentials: true
             });
-            localStorage.setItem(
-                "talk-tuie",
+            if (response.data.success) {
+                localStorage.setItem(
+                "talktuie",
                 JSON.stringify(response.data.user)
             );
-            if (response.data.success) {
                 login(response.data.user);
                 setLoading(false);
                 return {type:true, message:response.data.message}

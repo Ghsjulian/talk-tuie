@@ -1,7 +1,9 @@
 import React, { useState, useEffect, useRef } from "react";
 import { NavLink } from "react-router-dom";
+import useLogout from "../hooks/useLogout";
 
 const Header = () => {
+    const { logoutUser, isLoading } = useLogout();
     const navRef = useRef(null);
     const [isopen, setOpen] = useState(false);
     const openNav = () => {
@@ -16,7 +18,15 @@ const Header = () => {
                 <NavLink to="#">Add Contact</NavLink>
                 <NavLink to="#">Contact</NavLink>
                 <NavLink to="#">Calls</NavLink>
-                <NavLink to="#">Logout</NavLink>
+                <NavLink
+                    onClick={e => {
+                        e.preventDefault();
+                        logoutUser();
+                    }}
+                    to="#"
+                >
+                    {isLoading? "Please Wait..." : "Logout"}
+                </NavLink>
             </div>
             {/** Add This When Nav Toggled */}
             <div onClick={openNav} className={isopen && "overly"}></div>

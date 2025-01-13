@@ -10,8 +10,8 @@ export const api = import.meta.env.VITE_API_URL;
 
 // Initial state
 const initialState = {
-    isLogin: JSON.parse(localStorage.getItem("talk-tuie"))? true : false,
-    user: null || JSON.parse(localStorage.getItem("talk-tuie"))
+    isLogin: JSON.parse(localStorage.getItem("talktuie")) ? true : false,
+    user: null || JSON.parse(localStorage.getItem("talktuie"))
 };
 // Action types
 const LOGIN = "LOGIN";
@@ -53,8 +53,13 @@ export const AuthProvider = ({ children }) => {
     const login = userDetails => {
         dispatch({ type: LOGIN, payload: userDetails });
     };
+    const logout = () => {
+        dispatch({ type: LOGOUT });
+    };
     return (
-        <AuthContext.Provider value={{ state, api, login, isLogin, user }}>
+        <AuthContext.Provider
+            value={{ state, api, login, logout, isLogin, user }}
+        >
             {children}
         </AuthContext.Provider>
     );

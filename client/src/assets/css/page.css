@@ -20,6 +20,7 @@
     display: flex;
     justify-content: space-between;
     align-items: center;
+    z-index: 9000;
 }
 header #logo {
     width: 130px;
@@ -39,8 +40,119 @@ header .links a {
 .home-page header #menu-btn {
     display: none;
 }
+
+.home-page main {
+    position: relative;
+    width: 100%;
+    height: 80vh;
+    padding: 5% 0.8rem;
+}
+.home-page .search-area {
+    width: 100%;
+    max-width: 650px;
+    margin: 0 auto;
+    margin-top: 1rem;
+    padding: 0 0.7rem;
+    background: white;
+    border-radius: 5px;
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    border: 1px solid var(--btn);
+}
+.search-area input {
+    outline: none;
+    border: none;
+    padding: 0.5rem 1rem;
+    width: 100%;
+}
+.search-area button {
+    outline: none;
+    border: none;
+    background: var(--btn);
+    border-radius: 5px;
+    padding: 0.5rem;
+    width: 70px;
+    display: block;
+    color: var(--white);
+}
+main .users-list {
+    width: 100%;
+    height: 88vh;
+    max-height: 62vh;
+    max-width: 650px;
+    margin: 0.8rem auto;
+    padding: 1rem 0.8rem;
+    background: white;
+    border-radius: 5px;
+    display: flex;
+    flex-direction: column;
+    overflow-y: auto;
+    overflow-x: hidden;
+    scroll-behavior: smooth;
+}
+.users-list .user {
+    width: 100%;
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    border-bottom: 0.1px solid #c6d8db;
+    padding: 0.2rem 0;
+    margin: 0.3rem 0;
+}
+
+.users-list .user .user-avatar {
+    position: relative;
+}
+
+.users-list .user .user-avatar img {
+    width: 60px;
+    height: 60px;
+    object-fit: cover;
+    border: 0.1px solid var(--btn);
+    border-radius: 50%;
+    padding: 0.2rem;
+}
+.users-list .user strong {
+    font-weight: 800;
+    color: var(--text);
+    font-size: 16px;
+}
+.users-list .user .btn-area,
+.flex-user {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    gap: 0.8rem;
+}
+.user .btn-area button {
+    width: 60px;
+    border: none;
+    outline: none;
+    border-radius: 5px;
+    color: var(--white);
+    font-weight: 800;
+}
+.user .btn-area #call {
+    background: #00a708;
+    transition: .3s ease-in;
+}
+.user .btn-area #add {
+    background: #005298;
+    transition: .3s ease-in;
+}
+.user .btn-area #add:hover {
+    background: #00294b;
+}
+.user .btn-area #call:hover {
+    background: #006805;
+}
 /*--> Mobile Responsive <--*/
 @media (max-width: 768px) {
+    html {
+        font-size: 85%;
+        font-family: Sans-Serif;
+    }
     .home-page {
         width: 100vw;
         height: 100vh;
@@ -62,6 +174,7 @@ header .links a {
         padding: 0.5rem;
         background: var(--side);
         transition: 0.2s ease-in;
+        z-index: 9000;
     }
     header .links a {
         color: var(--btn);
@@ -87,5 +200,16 @@ header .links a {
     .home-page header .open-nav {
         display: flex;
         transition: 0.2s ease-in;
+        z-index: 9000;
+    }
+    .home-page main {
+        margin-top: 8%;
+        width: 100vw;
+        height: 80%;
+    }
+    main .users-list {
+        width: 95vw;
+        height: 92vh;
+        max-height: 82vh;
     }
 }

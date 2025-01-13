@@ -92,7 +92,6 @@ class USerController {
                                 contacts: newUser.contacts,
                                 avatar: newUser.avatar
                             };
-                            await Utils.setCookie(res, token);
                             return res.json({
                                 cose: 201,
                                 success: true,
@@ -231,23 +230,29 @@ class USerController {
             }
         }
     }
-    async UserMe(req, res) {
+    async UserSearch(req, res) {
+        let search = req.params.user;
         try {
-            if (req.user._id) {
-                const user = await UserModel.findOne({ _id: req.user._id });
-                return res.status(200).json(user);
+            if (search !== "init") {
+                const users = await UserModel.find({
+                    name: { $regex: search, $options: "i" }
+                }).select("-password");
+                return res.json(users);
             } else {
-                throw new Error("Unauthorized User");
+                const users = await UserModel.find().select("-password");
+                return res.json(users);
             }
         } catch (error) {
-            return res.json({
-                code: 403,
-                status: false,
-                error: true,
-                success: false,
-                message: error.message || "Something Went Worng"
-            });
+            res.status(500).send("Internal Server Error");
         }
+        /*
+    try {
+        const users = await User.find({ name: { $regex: search, $options: 'i' } });
+        res.json(users);
+    } catch (error) {
+        res.status(500).send('Server Error');
+    }
+        */
     }
     async GetOneUser(req, res) {
         try {
@@ -317,16 +322,18 @@ class USerController {
     async UserLogout(req, res) {
         try {
             if (req.user._id) {
-                res.cookie("minifacebook", "", {
-                    maxAge: 0
-                });
-                return res.json({
-                    code: 200,
-                    status: true,
-                    error: false,
-                    success: true,
-                    message: "User Logged Out Successfully"
-                });
+                return res
+                    .cookie("talktuie", "", {
+                        maxAge: 0
+                    })
+                    .status(200)
+                    .json({
+                        code: 200,
+                        status: "success",
+                        error: false,
+                        success: true,
+                        message: "User  Logged Out Successfully"
+                    });
             } else {
                 throw new Error("Unauthorized User");
             }
