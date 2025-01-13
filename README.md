@@ -20,7 +20,7 @@
 
 #### Developer Email : <a href="email:ghsjulian@outlook.com" target="_blank"> ghsjulian@outlook.com </a>
 
-#### Live Demo : <a href="https://mini-facebook-wrdw.onrender.com/" target="_blank">View Demo </a>
+#### Live Demo : <a href="https://talk-tuie.onrender.com/" target="_blank">View Demo </a>
 
 #### Start Date : 10 January 2025
 

@@ -18,14 +18,14 @@ const URI = process.env.SERVER_URI || "mongodb://localhost:27017/";
 const publicPath = path.join(__dirname);
 app.use(express.static(publicPath + "/public/"));
 */
-app.use(express.static(path.join(__dirname, "../frontend/dist")));
+app.use(express.static(path.join(__dirname, "../client/dist")));
 
 // Serve static files from the public directory
 app.use(express.static(path.join(__dirname, "public")));
 
 // Define the index route
 app.get("/", (req, res) => {
-    res.sendFile(path.join(__dirname, "../frontend/dist/index.html"));
+    res.sendFile(path.join(__dirname, "../client/dist/index.html"));
 });
 
 app.use(express.json());
