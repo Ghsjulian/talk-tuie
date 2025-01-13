@@ -13,6 +13,8 @@ const Signup = () => {
     const [password, setPassword] = useState("");
     const msgRef = useRef(null);
     const navigate = useNavigate();
+    document.title = "Create Your Account - Voice Call App"
+    
 
     const showMessage = (type, msg) => {
         if (type) {

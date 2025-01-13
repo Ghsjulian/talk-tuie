@@ -235,11 +235,14 @@ class USerController {
         try {
             if (search !== "init") {
                 const users = await UserModel.find({
-                    name: { $regex: search, $options: "i" }
+                    name: { $regex: search, $options: "i" },
+                    _id: { $ne: req.user._id }
                 }).select("-password");
                 return res.json(users);
             } else {
-                const users = await UserModel.find().select("-password");
+                const users = await UserModel.find({
+                    _id: { $ne: req.user._id }
+                }).select("-password");
                 return res.json(users);
             }
         } catch (error) {
@@ -254,11 +257,11 @@ class USerController {
     }
         */
     }
-    async GetOneUser(req, res) {
+    async AddContact(req, res) {
         try {
             if (req.user._id) {
                 const user = await UserModel.findOne({
-                    _id: req.params.user_id
+                    _id: req.params.id
                 });
                 if (user) {
                     return res.status(200).json(user);

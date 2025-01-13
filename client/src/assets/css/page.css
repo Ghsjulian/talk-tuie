@@ -103,13 +103,34 @@ main .users-list {
 
 .users-list .user .user-avatar {
     position: relative;
+    border: 0.1px solid var(--btn);
+    display: flex;
+    width: 60px;
+    height: 60px;
+    border-radius: 50%;
 }
-
+.user-avatar .online {
+    position: absolute;
+    right: 1.5px;
+    bottom: 7px;
+    width: 15px;
+    height: 15px;
+    background: #028a00;
+    border-radius: 50%;
+}
+.user-avatar .offline {
+    position: absolute;
+    right: 1.5px;
+    bottom: 7px;
+    width: 15px;
+    height: 15px;
+    background: #545454;
+    border-radius: 50%;
+}
 .users-list .user .user-avatar img {
     width: 60px;
     height: 60px;
     object-fit: cover;
-    border: 0.1px solid var(--btn);
     border-radius: 50%;
     padding: 0.2rem;
 }
@@ -135,11 +156,11 @@ main .users-list {
 }
 .user .btn-area #call {
     background: #00a708;
-    transition: .3s ease-in;
+    transition: 0.3s ease-in;
 }
 .user .btn-area #add {
     background: #005298;
-    transition: .3s ease-in;
+    transition: 0.3s ease-in;
 }
 .user .btn-area #add:hover {
     background: #00294b;

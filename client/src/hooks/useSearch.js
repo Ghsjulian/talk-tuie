@@ -12,10 +12,10 @@ const useSearch = () => {
         setLoading(true);
         try {
             const response = await axios.get(
-                `${api}/user-search/${searchTerm}`
-                /*  {
-                    params: { search: searchTerm }
-                }*/
+                `${api}/user-search/${searchTerm}`,
+                  {withCredentials: true
+                   // params: { search: searchTerm }
+                }
             );
             setUsers(response.data);
         } catch (err) {

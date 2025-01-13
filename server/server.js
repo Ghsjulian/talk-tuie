@@ -1,5 +1,6 @@
 // Import all modules here
-const { server, app, IO } = require("./socket");
+// const { server, app, IO } = require("./socket");
+const { server, app, IO } = require("./socket/server.socket");
 const express = require("express");
 const path = require("path");
 const mongoose = require("mongoose");

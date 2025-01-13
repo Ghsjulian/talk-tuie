@@ -9,7 +9,8 @@ const isLogin = require("../middlewares/isLogin")
 
 router.post("/user-signup", upload.single("avatar"), USerController.UserSignup);
 router.post("/user-login", USerController.UserLogin);
-router.get("/user-search/:user", USerController.UserSearch);
+router.get("/user-search/:user",isLogin, USerController.UserSearch);
 router.get("/user-logout", isLogin,USerController.UserLogout);
+router.get("/add-contact/:id", isLogin,USerController.AddContact);
 
 module.exports = router;
