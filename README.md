@@ -30,7 +30,7 @@
 
 ## About This Project
 
-**This is a mini facebook social networking project developed by using MERN STACK technology. This is really awesome and cool and it's actually behave like the Facebook. Such as user can create their own account and use it . A users can connect with other other users and make friends and he can post like and comment on others post. Once he create an account he can send request to a user and after being friends they can talk in messenger one to one in a private chat! I hope it is awesome project!!! You should use it once and thanks me later.**
+**This is a Networking project where users can create their new account connect with each others. they can talk in audio voice call. but this features isn't available now because i can't code anymore using my phone that's why but it's really awesome!**
 
 ---
 
@@ -48,7 +48,7 @@
 
 -   **Live Search A User**
 
--   **See Friends Online Visibility**
+-   **See Users Online Visibility**
 
 -   **More...**
 
@@ -59,26 +59,23 @@
 **Copy the command bellow and paste on your terminal !**
 
 ```bash
-git clone https://github.com/Ghsjulian/mini-facebook.git
+git clone https://github.com/Ghsjulian/talk-tuie.git
 cd talk-tuie
-cd client && npm install && npm run dev
-cd server && npm install && npm run dev
-cd ..
+cd client
+npm install && npm run dev
+cd server
+npm install && npm run dev
 ```
 
----
-
-#### Folder Structure :
-
 
 ---
 
-#### Screensots And Demo (Desktop Mode) :
+#### Screensots And Demo (Mobile Mode) :
 
-<img src="/demo/deskk-1.jpg" width="365px" height="200px"/><br/><br/>
-<img src="/demo/desk-2.jpg" width="365px" height="200px"/><br/><br/>
-<img src="/demo/desk-3.jpg" width="365px" height="200px"/><br/><br/>
-<img src="/demo/desk-4.jpg" width="365px" height="200px"/><br/><br/>
+<img src="/demo/S1.jpg" width="365px" height="710px"/><br/><br/>
+<img src="/demo/S2.jpg" width="365px" height="710px"/><br/><br/>
+<img src="/demo/S3.jpg" width="365px" height="710px"/><br/><br/>
+<img src="/demo/S4.jpg" width="365px" height="710px"/><br/><br/>
 
 
 #### Thank You !
